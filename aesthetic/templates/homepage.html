@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+{% if aesthetic == "gifted kid burnout syndrome" %}
+<h1>you're a gifted kid burnout syndrome :(</h1>
+<img src="/static/gkbs.png" width="500" height="500">
+
+
+{% elif aesthetic == "wannabe indie girlie" %}
+<h1>you're a wannabe indie girlie?</h1>
+<img src="/static/wig.png" width="500" height="500">
+
+
+{% elif aesthetic == "victorian era child" %}
+<h1>you're a victorian era child!</h1>
+<img src="/static/victorian.png" width="350" height="450">
+
+
+{% elif aesthetic == "gentrified cottagecore fairy" %}
+<h1>you're a gentrified cottage fairy <3</h1><br>
+<img src="/static/gccf.png" width="550" height="450">
+
+
+{% else %}
+<p>wow! you figured out a way to break my website. well done! :p </p>
+
+{% endif %}
+
+<br><br>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/quiz"><u>Retake the Quiz</u></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/shop"><u>Go Shopping</u></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/music"><u>Catch Some Tunes</u></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/meet"><u>Meet Users</u></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/history"><u>Your History</u></a>
+    </li>
+</ul>
+
+{% endblock %}

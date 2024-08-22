@@ -1,0 +1,180 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quiz
+{% endblock %}
+
+{% block main %}
+<h1>quiz: what's your aesthetic?</h1>
+
+<form action="/quiz" method="post">
+    <div>
+        <p><b>1. what's your ideal go-to study spot?</b></p>
+          <input type="radio" id="gkbs1" name="q1" value="GKBS" required>
+          <label for="gkbs1">a quiet corner of the library</label><br>
+          <input type="radio" id="wig1" name="q1" value="WIG" required>
+          <label for="wig1">a trendy coffee shop with indie music</label><br>
+          <input type="radio" id="vec1" name="q1" value="VEC" required>
+          <label for="vec1">your dorm room with string lights and cozy vibes</label><br>
+          <input type="radio" id="gcf1" name="q1" value="GCF" required>
+          <label for="gcf1">outdoors! in a park or under a tree</label>
+    </div>
+  <br>
+
+  <div>
+    <p><b>2. how do you usually dress for class?</b></p>
+      <input type="radio" id="gcf2" name="q2" value="GCF" required>
+      <label for="gcf2">bohemian with flowy dresses and layered jewelry</label><br>
+      <input type="radio" id="wig2" name="q2" value="WIG" required>
+      <label for="wig2">classic and timeless - think button-down shirts and loafers</label><br>
+      <input type="radio" id="vec2" name="q2" value="VEC" required>
+      <label for="vec2">vintage-inspired with lots of thrifted finds</label><br>
+      <input type="radio" id="gkbs2" name="q2" value="GKBS" required>
+      <label for="gkbs2">casual and comfy - leggings, oversized sweaters, and sneakers</label><br>
+  </div>
+  <br>
+
+  <div>
+    <p><b>3. it's the weekend! whatcha doin?</b></p>
+      <input type="radio" id="vec3" name="q3" value="VEC" required>
+      <label for="vec3">watching old-timey movie nights or DIY crafting in your room</label><br>
+      <input type="radio" id="wig3" name="q3" value="WIG" required>
+      <label for="wig3">exploring local art galleries or music festivals</label><br>
+      <input type="radio" id="gcf3" name="q3" value="GCF" required>
+      <label for="gcf3">hiking, yoga, or anything outdoors</label><br>
+      <input type="radio" id="gkbs3" name="q3" value="GKBS" required>
+      <label for="gkbs3">attending lectures or academic workshops</label><br>
+  </div>
+  <br>
+
+  <div>
+    <p><b>4. how do you decorate your space?</b></p>
+      <input type="radio" id="gcf4" name="q4" value="GCF" required>
+      <label for="gcf4">plants, dreamcatchers, and nature-inspired elements</label><br>
+      <input type="radio" id="gkbs4" name="q4" value="GKBS" required>
+      <label for="gkbs4">minimalist with clean lines and neutral colors</label><br>
+      <input type="radio" id="vec4" name="q4" value="VEC" required>
+      <label for="vec4">vintage posters, records, and eclectic decors</label><br>
+      <input type="radio" id="wig4" name="q4" value="WIG" required>
+      <label for="wig4">lots of photos, fairy lights, and plush pillows</label><br>
+  </div>
+  <br>
+
+  <div>
+    <p><b>5. which quote resonates with you the most?</b></p>
+      <input type="radio" id="gcf5" name="q5" value="GCF" required>
+      <label for="gcf5">"Take the road less traveled."</label><br>
+      <input type="radio" id="wig5" name="q5" value="WIG" required>
+      <label for="wig5">"Art is freedom."</label><br>
+      <input type="radio" id="gkbs5" name="q5" value="GKBS" required>
+      <label for="gkbs5">"Knowledge is power."</label><br>
+      <input type="radio" id="vec5" name="q5" value="VEC" required>
+      <label for="vec5">"Home is where the heart is."</label><br>
+  </div>
+  <br>
+
+  <div><p><b>6. animals are a person's best friend! who's your animal friend?</b></p>
+  <label>
+    <input class="special" type="radio" name="q6" value="GCF" checked>
+    <img class="special" src="/static/lamb.png" alt="Option 1" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q6" value="GKBS">
+    <img class="special" src="/static/redfox.png" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q6" value="VEC">
+    <img class="special" src="/static/elephant.png" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q6" value="WIG" width="180" height="150">
+    <img class="special" src="/static/peacock.png" alt="Option 2" width="180" height="150">
+  </label>
+</div><br>
+
+<div><p><b>7. you've escaped berg for a night! what are you chowing down on?</b></p>
+  <label>
+    <input class="special" type="radio" name="q7" value="GCF" checked>
+    <img class="special" src="/static/indian.jpeg" alt="Option 1" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q7" value="GKBS">
+    <img class="special" src="/static/pasta.jpeg" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q7" value="VEC">
+    <img class="special" src="/static/potatomeal.jpeg" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q7" value="WIG" width="180" height="150">
+    <img class="special" src="/static/beef.jpeg" alt="Option 2" width="180" height="150">
+  </label>
+</div><br>
+
+<div><p><b>8. pull out your phone! what's your top-most recently used emoji? </b></p>
+  <label>
+    <input class="special" type="radio" name="q8" value="GCF" checked>
+    <img class="special" src="/static/fairy.png" alt="Option 1" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q8" value="GKBS">
+    <img class="special" src="/static/crying.png" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q8" value="VEC">
+    <img class="special" src="/static/skull.png" alt="Option 2" width="180" height="150">
+  </label>
+  <label>
+    <input class="special" type="radio" name="q8" value="WIG" width="180" height="150">
+    <img class="special" src="/static/heart.webp" alt="Option 2" width="180" height="150">
+  </label>
+</div><br>
+
+  <!-- source: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_rangeslider_round -->
+  <div class="slidecontainer"><p><b>9. "i believe the ends justify the means." from 1-10, how much do you agree? </b></p>
+    <b><p>Value: <span id="demo"></span></p></b>
+    <input type="range" min="1" max="10" name="q9" value="5" class="slider" id="myRange">
+  </div><br>
+
+  <div><p><b>10. the eyes are the window to the soul. what do you see? </b></p>
+  <p><img class="special" src="/static/inkblot.jpeg" alt="Option 1" width="180" height="150"></p>
+    <input type="radio" id="gcf10" name="q10" value="GCF" required>
+    <label for="gcf10">demonic cow</label><br>
+    <input type="radio" id="wig10" name="q10" value="WIG" required>
+    <label for="wig10">a cauldron of bats</label><br>
+    <input type="radio" id="vec10" name="q10" value="VEC" required>
+    <label for="vec10">kissing people (...ok)</label><br>
+    <input type="radio" id="gkbs10" name="q10" value="GKBS" required>
+    <label for="gkbs10">???</label><br>
+  </div>
+
+
+  <br>
+  <h5>by completing this quiz, you agree to share the following info with other site visitors, along with your aesthetic:)</h5>
+  <div class="mb-3">
+    <input autocomplete="off" class="form-control mx-auto w-auto" name="first" placeholder="First Name" type="text" required>
+    <input autocomplete="off" class="form-control mx-auto w-auto" name="last" placeholder="Last Name" type="text" required>
+    <input autocomplete="off" class="form-control mx-auto w-auto" name="insta" placeholder="Instagram (@...)" type="text">
+  </div>
+  <button class="btn btn-primary" type="submit">get sorted!</button>
+
+  <br><br><br>
+<h3>Feedback (Optional)</h3>
+  <div class="mb-4">
+    <label class="form-label" for="feedback_comments">did you like the quiz? do you like my project? do you even like me? any other little secrets you're hiding? dish it all out below!</label>
+    <textarea class="form-control" rows="6" name="comments" id="feedback_comments" ></textarea>
+  </div>
+</form>
+
+
+<script>
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+</script>
+
+{% endblock %}

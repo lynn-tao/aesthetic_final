@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+{% if aesthetic == "GKBS" %}
+    <h1>you are: gifted kid burnout syndrome!</h1>
+    <p>from academic weapon to academic victim</p>
+    <p> CAMHS Line: (617)-495-2042 </p>
+    <img src="/static/gkbs.png" width="500" height="500">
+
+{% elif aesthetic == "WIG" %}
+    <h1>you are: wannabe indie girlie!</h1>
+    <p>don't worry, i love hozier and chai lattes too</p>
+    <img src="/static/wig.png" width="500" height="500">
+
+{% elif aesthetic == "VEC" %}
+    <h1>you are: victorian era child!</h1>
+    <p>get sick every semester? consider touching grass. or seeing the sun.</p>
+    <img src="/static/victorian.png" width="350" height="450">
+
+{% elif aesthetic == "GCF" %}
+    <h1>you are: gentrified cottage fairy!</h1>
+    <p>poser. we go to school in boston.</p>
+    <img src="/static/gccf.png" width="550" height="450">
+
+{% else %}
+    <p>wow! you figured out a way to break my website. well done! :p </p>
+
+{% endif %}
+<br>
+<br><h5>now get in loser, we're going <a href="/shop">shopping</a>!</h5>
+<img src="/static/get-in-loser-were-going-shopping.gif" height=125 width=180>
+
+{% endblock %}

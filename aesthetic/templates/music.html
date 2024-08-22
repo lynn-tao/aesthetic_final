@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<h1><i>musical fantasia - play, listen, and enjoy</i></h1>
+
+{% if aesthetic == "gifted kid burnout syndrome" %}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/40ItDl124FkGHbOOSdLEu5?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<h4><a href="https://open.spotify.com/playlist/40ItDl124FkGHbOOSdLEu5?si=50b1220cfd1c42a3&pt=ee9d89db0bbd88ba97f024c2b9c5ec67" target="_blank">want to add to the playlist?</a></h4>
+
+
+{% elif aesthetic == "wannabe indie girlie" %}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6ilG8cq8R43PRMX8kh3vKx?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<h4><a href="https://open.spotify.com/playlist/6ilG8cq8R43PRMX8kh3vKx?si=e6f662dc064047f6&pt=dbd2069f8a1c40d0887eabbc08afa593" target="_blank">want to add to the playlist?</a></h4>
+
+
+{% elif aesthetic == "victorian era child" %}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4hM5YmBNlgzz8itskaTgzc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<h4><a href="https://open.spotify.com/playlist/4hM5YmBNlgzz8itskaTgzc?si=f858cd7f79c7402f&pt=f03d69d4e5944dbc2cb2377c0dc9457e" target="_blank">want to add to the playlist?</a></h4>
+
+
+{% elif aesthetic == "gentrified cottagecore fairy" %}
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4MunmDK08NvaceuEWOpwMh?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<h4><a href="https://open.spotify.com/playlist/4MunmDK08NvaceuEWOpwMh?si=a3a79ee9d77d4207&pt=6e2399cee2867e8c641719d87511f33d" target="_blank">want to add to the playlist?</a></h4>
+
+
+{% else %}
+<p>wow! you figured out a way to break my website. well done! :p </p>
+
+{% endif %}
+
+
+{% endblock %}

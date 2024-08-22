@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meet
+{% endblock %}
+
+{% block main %}
+
+<script>
+    // SOURCE: CANVA.JS
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        exportEnabled: true,
+        animationEnabled: true,
+        title:{
+            text: "Summary Statistics - Total Users: " + {{ stats[4] }}
+        },
+        legend:{
+            cursor: "pointer",
+            itemclick: explodePie
+        },
+        data: [{
+            type: "pie",
+            showInLegend: true,
+            toolTipContent: "{name}: <strong>{y}%</strong>",
+            indexLabel: "{name} - {y}%",
+            dataPoints: [
+                { y: {{ stats[0] }}, name: "gifted kid burnout syndrome", exploded: true },
+                { y: {{ stats[1] }}, name: "victorian era child" },
+                { y: {{ stats[2] }}, name:  "wannabe indie girlie"},
+                { y: {{ stats[3] }}, name: "gentrified cottagecore fairy"},
+            ]
+        }]
+    });
+    chart.render();
+    }
+
+    function explodePie (e) {
+        if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+        } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+        }
+        e.chart.render();
+
+    }
+</script>
+
+<h1> find your people <3 ({{ aesthetic }})</h1><br>
+<h4><b>bolded</b> names in <b><font color="green">green</font></b> share the same aesthetic as you!</h4>
+<h5><i>feel free to reach out to new friends via <a href="https://www.instagram.com/direct/inbox/" target="_blank">instagram</a>!</i></h5>
+<main class="container py-5 text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Instagram</th>
+                    <th>Aesthetic</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in users %}
+                    {% if aesthetic == item.aesthetic %}
+                        <tr>
+                            <td><b><font color="green">{{ item.first }}</font></b></td>
+                            <td><b><font color="green">{{ item.last }}</font></b></td>
+                            <td>{{ item.instagram }}</td>
+                            <td>{{ item.aesthetic }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td>{{ item.first }}</td>
+                            <td>{{ item.last }}</td>
+                            <td>{{ item.instagram }}</td>
+                            <td>{{ item.aesthetic }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+</main>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
+{% endblock %}
